@@ -1,0 +1,207 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: #1f4e79;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar ul {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+
+/* Main */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+
+/* Sections */
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #1f4e79;
+    margin-bottom: 15px;
+}
+
+
+/* Welcome */
+.welcome {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+}
+
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #1f4e79;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f6f8;
+}
+
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+
+    border: 1px solid #bbb;
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1f4e79;
+}
+
+
+/* Button */
+button {
+    padding: 11px;
+
+    background-color: #1f4e79;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #163a5c;
+}
+
+
+/* Contact */
+.contact {
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1f4e79;
+    color: white;
+
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    main {
+        padding: 0 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
