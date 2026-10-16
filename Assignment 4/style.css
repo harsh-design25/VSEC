@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -10,18 +11,26 @@ body {
 
 .container {
     width: 90%;
-    max-width: 500px;
+    max-width: 900px;
     background-color: white;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 3px 10px #aaa;
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #1f4e79;
+}
+
+h1 {
     margin-bottom: 25px;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
 label {
@@ -30,8 +39,7 @@ label {
     font-weight: bold;
 }
 
-input,
-select {
+input, select {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -58,6 +66,33 @@ button:hover {
     text-align: center;
     font-weight: bold;
     margin-top: 15px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background-color: #1f4e79;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eef4f8;
 }
 
 @media (max-width: 600px) {

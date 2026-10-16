@@ -1,55 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Employee Registration</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="container">
-
         <h1>Employee Registration</h1>
 
         <form id="employeeForm">
-
-            <label>Employee Name</label>
+            <label for="name">Employee Name</label>
             <input type="text" id="name" placeholder="Enter employee name">
 
-            <label>Email</label>
+            <label for="email">Email</label>
             <input type="text" id="email" placeholder="Enter email">
 
-            <label>Password</label>
+            <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter password">
 
-            <label>Phone Number</label>
+            <label for="phone">Phone Number</label>
             <input type="text" id="phone" placeholder="Enter 10-digit phone number">
 
-            <label>Department</label>
-
+            <label for="department">Department</label>
             <select id="department">
                 <option value="">Select Department</option>
-                <option>IT</option>
-                <option>HR</option>
-                <option>Finance</option>
-                <option>Marketing</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
             </select>
 
             <button type="submit">Register</button>
-
             <p id="message"></p>
-
         </form>
 
+        <h2>Registered Employees</h2>
+
+        <div class="table-wrapper">
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Department</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                    <tr id="emptyRow">
+                        <td colspan="4">No employees registered yet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>

@@ -1,58 +1,72 @@
-document.getElementById("employeeForm").addEventListener("submit", function(event) {
 
+const employeeForm = document.getElementById("employeeForm");
+const message = document.getElementById("message");
+const employeeTableBody = document.getElementById("employeeTableBody");
+
+employeeForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let password = document.getElementById("password").value;
-    let phone = document.getElementById("phone").value.trim();
-    let department = document.getElementById("department").value;
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const phone = document.getElementById("phone").value.trim();
+    const department = document.getElementById("department").value;
 
-    let message = document.getElementById("message");
-
-
-    // Name validation
+    // Validate employee name
     if (name === "") {
-        message.innerHTML = "Please enter employee name.";
-        message.style.color = "red";
+        showMessage("Please enter employee name.", "red");
         return;
     }
 
-
-    // Email validation
-    if (!email.includes("@") || !email.includes(".")) {
-        message.innerHTML = "Please enter a valid email.";
-        message.style.color = "red";
+    // Validate email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showMessage("Please enter a valid email.", "red");
         return;
     }
 
-
-    // Password validation
+    // Validate password
     if (password.length < 6) {
-        message.innerHTML = "Password must contain at least 6 characters.";
-        message.style.color = "red";
+        showMessage("Password must contain at least 6 characters.", "red");
         return;
     }
 
-
-    // Phone validation
-    if (phone.length !== 10 || isNaN(phone)) {
-        message.innerHTML = "Phone number must contain 10 digits.";
-        message.style.color = "red";
+    // Validate phone number
+    if (!/^\d{10}$/.test(phone)) {
+        showMessage("Phone number must contain exactly 10 digits.", "red");
         return;
     }
 
-
-    // Department validation
+    // Validate department
     if (department === "") {
-        message.innerHTML = "Please select a department.";
-        message.style.color = "red";
+        showMessage("Please select a department.", "red");
         return;
     }
 
+    // Remove the empty table message
+    const emptyRow = document.getElementById("emptyRow");
+    if (emptyRow) {
+        emptyRow.remove();
+    }
 
-    // Successful registration
-    message.innerHTML = "Employee registered successfully!";
-    message.style.color = "green";
+    // Create a new employee row
+    const row = document.createElement("tr");
 
+    [name, email, phone, department].forEach(function(value) {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+    });
+
+    // Display employee in the table
+    employeeTableBody.appendChild(row);
+
+    showMessage("Employee registered successfully!", "green");
+
+    // Clear form after registration
+    employeeForm.reset();
 });
+
+function showMessage(text, color) {
+    message.textContent = text;
+    message.style.color = color;
+}
