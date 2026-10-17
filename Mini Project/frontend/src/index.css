@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f3f4f8; color: #1f2430; }
+.app { max-width: 1000px; margin: 0 auto; padding: 16px; }
+header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+h1 { margin: 0; font-size: 1.5rem; }
+h2 { margin: 0 0 12px; font-size: 1.1rem; }
+nav { display: flex; gap: 8px; }
+.tab { background: #fff; color: #333; border: 1px solid #d5d8e0; }
+.tab.active { background: #3b5bdb; color: #fff; border-color: #3b5bdb; }
+.card { background: #fff; border-radius: 10px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; align-items: start; }
+.grid h2, .grid .actions { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; }
+input, select { padding: 8px 10px; border: 1px solid #c9ccd6; border-radius: 6px; font-size: .95rem; width: 100%; }
+input.invalid, select.invalid { border-color: #e03131; background: #fff5f5; }
+.err { color: #e03131; }
+button { padding: 8px 14px; border: 0; border-radius: 6px; background: #3b5bdb; color: #fff; cursor: pointer; font-size: .9rem; }
+button:hover { opacity: .9; }
+button.ghost { background: #e9ecef; color: #333; }
+button.danger { background: #e03131; }
+.actions, .row-actions { display: flex; gap: 8px; }
+.bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+.bar h2 { margin: 0; }
+.bar input { max-width: 260px; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #eceef3; white-space: nowrap; }
+tr.overdue td { background: #fff5f5; color: #c92a2a; }
+.empty { text-align: center; color: #888; }
+.toast { position: fixed; bottom: 20px; right: 20px; background: #2b8a3e; color: #fff; padding: 12px 18px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.2); max-width: 360px; }
+.toast.error { background: #c92a2a; }
